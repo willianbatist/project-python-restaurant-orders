@@ -12,6 +12,7 @@ def analyze_log(path_to_file):
             *data, = dados
             for orden in data:
                 ordens.append(orden)
-            return ordens
+        with open("data/mkt_campaign.txt", mode="r") as txt_arquivo:
+            txt_arquivo.write(f'{ordens}')
     except FileNotFoundError:
         raise FileNotFoundError(f"Arquivo inexistente:'{path_to_file}'")
