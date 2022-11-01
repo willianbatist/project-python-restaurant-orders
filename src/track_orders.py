@@ -47,4 +47,9 @@ class TrackOrders:
         return resultado
 
     def get_least_busy_day(self):
-        pass
+        dias = []
+        for cliente, _, dia in self.data:
+            if cliente == cliente:
+                dias.append(dia)
+        resultado = min(dias, key=dias.count)
+        return resultado
