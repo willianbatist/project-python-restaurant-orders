@@ -39,7 +39,12 @@ class TrackOrders:
         return resultado
 
     def get_busiest_day(self):
-        pass
+        dias = []
+        for cliente, _, dia in self.data:
+            if cliente == cliente:
+                dias.append(dia)
+        resultado = max(dias, key=dias.count)
+        return resultado
 
     def get_least_busy_day(self):
         pass
