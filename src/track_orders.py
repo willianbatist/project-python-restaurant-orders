@@ -17,7 +17,15 @@ class TrackOrders:
         return resultado
 
     def get_never_ordered_per_customer(self, customer):
-        pass
+        comida_set = set()
+        total_comida_set = set()
+        for cliente, comida, _ in self.data:
+            if cliente == customer:
+                comida_set.add(comida)
+            elif cliente != customer:
+                total_comida_set.add(comida)
+        resultado = total_comida_set - comida_set
+        return resultado
 
     def get_days_never_visited_per_customer(self, customer):
         pass
