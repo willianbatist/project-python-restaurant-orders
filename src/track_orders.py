@@ -28,7 +28,15 @@ class TrackOrders:
         return resultado
 
     def get_days_never_visited_per_customer(self, customer):
-        pass
+        dias = set()
+        dias_totais = set()
+        for cliente, _, dia in self.data:
+            if cliente == customer:
+                dias.add(dia)
+            elif cliente != customer:
+                dias_totais.add(dia)
+        resultado = dias_totais - dias
+        return resultado
 
     def get_busiest_day(self):
         pass
